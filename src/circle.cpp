@@ -1,11 +1,11 @@
 // Copyright 2022 UNN-CS
+#include "circle.h"
 #include <cstdint>
 #include <stdexcept>
-#include "circle.h"
 #include <cmath>
 
 namespace {
-  constexpr double PI = 3.1415926535897932;
+constexpr double PI = 3.1415926535897932;
 }
 
 Circle::Circle() {
@@ -21,7 +21,7 @@ Circle::Circle(double radius_) {
 void Circle::setRadius(double radius_) {
     if (radius_ < 0.0) {
         throw std::invalid_argument("negative argument");
-    } 
+    }
     this->radius = radius_;
     this->ference = 2 * PI * this->radius;
     this->area = PI * (this->radius * this->radius);
@@ -30,7 +30,7 @@ void Circle::setRadius(double radius_) {
 void Circle::setFerence(double ference_) {
     if (ference_ < 0.0) {
         throw std::invalid_argument("negative argument");
-    } 
+    }
     this->ference = ference_;
     this->radius = this->ference / (2 * PI);
     this->area = PI * (this->radius * this->radius);
@@ -39,7 +39,7 @@ void Circle::setFerence(double ference_) {
 void Circle::setArea(double area_) {
     if (area_ < 0.0) {
         throw std::invalid_argument("negative argument");
-    } 
+    }
     this->area = area_;
     this->radius = sqrt(this->area / PI);
     this->ference = 2 * PI * this->radius;
